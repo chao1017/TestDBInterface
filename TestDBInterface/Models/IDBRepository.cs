@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define _INSERT_DATA
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,9 @@ namespace TestDBInterface.Models
         bool ConnectDB(string dbType);
 
         //insert data to database
+        #if INSERT_DATA
         void InsertData(string para1);
+        #endif
     }
+
 }

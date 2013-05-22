@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define _INSERT_DATA
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,9 +28,5 @@ namespace TestDBInterface.Models
             //throw new NotImplementedException();
         }
 
-        public void InsertData(string para1)
-        {
-            //
-        }
     }
 }
