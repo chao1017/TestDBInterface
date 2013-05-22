@@ -9,6 +9,10 @@ namespace TestDBInterface.Models
     interface IDBRepository
     {
         
-        bool ConnectDB(string dbType, string dbName);
+        //connect to database
+        bool ConnectDB(string dbType);
+
+        //insert data to database
+        void InsertData(string para1);
     }
 }

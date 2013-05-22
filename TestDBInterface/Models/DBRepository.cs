@@ -4,23 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data.OleDb;
 
 namespace TestDBInterface.Models
 {
     public class DBRepository : IDBRepository
     {
-        public bool ConnectDB(string dbType, string dbName)
+        public bool ConnectDB(string dbType)
         {
             bool result = false;
             string connStr = ConfigurationManager.ConnectionStrings[dbType].ToString();
-            using (SqlConnection conn = new SqlConnection(connStr))
+            
+            using (OleDbConnection connection = new OleDbConnection(connStr))
             {
-                conn.Open();
+                
+                connection.Open();
                 result = true;
             }
 
             return result;
             //throw new NotImplementedException();
+        }
+
+        public void InsertData(string para1)
+        {
+            //
         }
     }
 }

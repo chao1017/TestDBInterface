@@ -17,10 +17,17 @@ namespace TestDBInterface.Controllers
 
         public ActionResult Index()
         {
-            dbrObj.ConnectDB("SQLServer", "");
-            //repo.ConnectDB("SQLServer", "");
+            dbrObj.ConnectDB("oracle");
+            
              
             return View();
+        }
+
+        public string InsertData(string para1)
+        {
+
+            //dbrObj.InsertData(para1);
+            return HttpUtility.HtmlEncode("Hello " + para1); ;
         }
 
     }
